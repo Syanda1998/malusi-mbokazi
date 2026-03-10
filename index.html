@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Malusi Mbokazi</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#000;
+color:white;
+}
+
+.container{
+max-width:90%;
+margin:auto;
+padding:0 20px;
+}
+
+/* HEADER */
+
+header{
+background:#000;
+padding:18px 0;
+border-bottom:1px solid #111;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-weight:600;
+font-size:18px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:28px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-size:13px;
+}
+
+.book-btn{
+background:#f4c400;
+color:black;
+padding:6px 14px;
+border-radius:3px;
+font-weight:500;
+}
+
+/* HERO */
+
+/* .hero{
+min-height:650px;
+display:flex;
+align-items:center;
+} */
+
+.hero{
+position:relative;
+padding:40px 0 40px 0;
+}
+
+.artist-img{
+position:absolute;
+right:8%;
+bottom:-120px;   /* pushes image into next section */
+/* height:750px; */
+z-index:5;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:40px;
+}
+
+.hero h3{
+color:#f4c400;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:13px;
+line-height:1.8;
+color:#ddd;
+}
+
+.hero-buttons{
+margin-top:25px;
+}
+
+.btn{
+padding:10px 20px;
+border-radius:25px;
+border:none;
+font-size:12px;
+cursor:pointer;
+margin-right:10px;
+}
+
+.btn-red{
+background:#e33c2e;
+color:white;
+}
+
+.btn-outline{
+border:1px solid #e33c2e;
+background:transparent;
+color:#e33c2e;
+}
+
+.hero img{
+width:100%;
+max-width:430px;
+}
+.contact-input-row{
+display:flex;
+gap:15px;
+margin-bottom:15px;
+}
+
+.contact-input-row input{
+flex:1;
+padding:10px;
+border:1px solid #ccc;
+border-radius:4px;
+}
+/* JOURNEY */
+
+/* .journey{
+background:#f4c400;
+padding:70px 0;
+color:black;
+} */
+
+.journey{
+position:relative;
+z-index:1;
+padding:40px 0 40px 0;
+}
+
+.journey-grid{
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:40px;
+align-items:center;
+}
+
+.journey p{
+font-size:13px;
+line-height:1.8;
+color: black;
+width: 150%;
+}
+
+.download{
+margin-top:20px;
+background:#e33c2e;
+border:none;
+padding:10px 20px;
+border-radius:20px;
+color:white;
+font-size:12px;
+}
+
+/* EVENT */
+
+.event{
+background:white;
+color:black;
+padding:70px 0;
+}
+
+.event-grid{
+display:grid;
+grid-template-columns:120px 180px 1fr auto;
+gap:30px;
+align-items:center;
+}
+
+.date{
+background:black;
+color:white;
+text-align:center;
+padding:15px;
+border-radius:5px;
+}
+
+.date h1{
+color:#f4c400;
+font-size:30px;
+}
+
+.event img{
+width:160px;
+border-radius:6px;
+}
+
+.buy button{
+padding:10px 20px;
+border-radius:25px;
+border:1px solid #e33c2e;
+background:transparent;
+cursor:pointer;
+}
+
+/* BOOKINGS */
+
+.bookings{
+display:grid;
+grid-template-columns:1fr 2fr;
+}
+
+.booking-left{
+background:#f4c400;
+color:black;
+padding:60px;
+}
+
+.booking-left h3{
+color:#e33c2e;
+}
+
+.booking-left h1{
+margin:15px 0;
+}
+
+/* .booking-right{
+background:url("concert.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+} */
+
+.booking-right{
+display:flex;
+align-items:center;
+justify-content:center;
+background:#000;
+padding:40px;
+}
+
+.video-container{
+position:relative;
+width:100%;
+max-width:700px;
+padding-bottom:56.25%;
+height:0;
+}
+
+.video-container iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border-radius:8px;
+}
+
+.play{
+width:80px;
+height:80px;
+background:#ff3c30;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+color:white;
+}
+
+/* CONTACT */
+
+.contact{
+background:#eee;
+color:black;
+padding:70px 0;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:40px;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:4px;
+}
+
+.send{
+background:#2ecc71;
+border:none;
+padding:12px 25px;
+color:white;
+border-radius:4px;
+}
+
+/* SOCIAL */
+
+.social{
+margin-top:20px;
+}
+
+.social i{
+font-size:18px;
+margin-right:15px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+text-align:center;
+padding:15px;
+font-size:12px;
+color:#aaa;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:992px){
+
+.hero-grid,
+.journey-grid,
+.event-grid,
+.bookings,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.event-grid{
+text-align:center;
+}
+
+.buy{
+margin-top:20px;
+}
+
+.hero img{
+margin:auto;
+}
+
+.booking-right{
+height:300px;
+}
+
+.artist-img{
+position:relative;
+bottom:0;
+right:0;
+height:auto;
+width:80%;
+display:block;
+margin:40px auto;
+}
+
+.hero{
+padding-bottom:60px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    
+<div class="container nav">
+
+<div class="logo">MALUSI MBOKAZI</div>
+
+<nav>
+<ul>
+<li><a href="#">HOME</a></li>
+<li><a href="#">ABOUT</a></li>
+<li><a href="#">EVENTS</a></li>
+<li><a href="#">CONTACT</a></li>
+<li><a class="book-btn">BOOKINGS</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+
+<!-- HERO -->
+
+<!-- <section class="hero">
+<div class="container hero-grid">
+
+<div>
+
+<h3>MALUSI MBOKAZI</h3>
+
+<p>
+Malusi Mbokazi has been in the entertainment industry as a professional
+gospel singer since 2001. The public got the first glimpse of his vocal
+abilities as a leader of the group Abangobi.
+</p>
+
+<p>
+During his leadership, the group collected several accolades including
+Best Accapella Group at the SABC Crown Gospel Music Awards.
+</p>
+
+<div class="hero-buttons">
+<button class="btn btn-red">PERSONAL JOURNEY</button>
+<button class="btn btn-outline">PERSONAL LIFE</button>
+</div>
+
+</div>
+
+<img src="img/mbokazi.png">
+
+</div>
+</section> -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div class="hero-text">
+
+<h3>MALUSI MBOKAZI</h3>
+
+<p>
+Malusi Mbokazi is a South African gospel artist, performer, and mentor with a long and impactful career in the gospel music industry. 
+Known for his powerful voice and inspiring ministry, he has performed on many prestigious stages and collaborated with leading gospel 
+artists across Africa.<br><br>
+
+Throughout his career, Malusi has appeared on major media platforms including interviews on Ukhozi FM, Vuma FM, and Igagasi FM, as well 
+as television appearances on shows such as Adam on Tswane TV.
+
+</p>
+
+<div class="hero-buttons">
+<button class="btn btn-red">Read More</button>
+<!-- <button class="btn btn-outline">PERSONAL LIFE</button> -->
+</div>
+
+</div>
+
+</div>
+
+<img src="img/mbokazi.png" class="artist-img" style="top: 30px;">
+
+</section>
+
+<!-- JOURNEY -->
+
+<section class="journey" style="background-color: #f4c400;">
+<div class="container journey-grid">
+
+<!-- <img src="mbokazi.png"> -->
+
+<div>
+
+<h3>PERSONAL JOURNEY</h3>
+
+<p>
+Malusi’s life has also been marked by powerful testimonies of perseverance. In 2014, doctors warned that he might never sing again after 
+discovering a serious voice condition. However, through faith and medical help, he recovered and continued his music ministry.<br><br>
+
+In September 2022, shortly after hosting a live recording, he faced another serious health challenge and was hospitalized for acute 
+cholecystitis. After several weeks in hospital, he recovered and continues his musical mission.
+</p>
+<div class="hero-buttons">
+<button class="btn btn-red">DOWNLOAD PROFILE</button>
+<!-- <button class="btn btn-outline">PERSONAL LIFE</button> -->
+</div>
+
+<!-- <button class="download">DOWNLOAD PROFILE</button> -->
+
+</div>
+
+</div>
+</section>
+
+<!-- EVENT -->
+
+<section class="event">
+<div class="container event-grid">
+
+<div class="date" style="width: 1px;"></div>
+
+<img src="img/revival.png" style="margin-left: -150px;">
+
+<div>
+<p>THE REVIVAL WITH</p>
+<h2><span style="color:#e33c2e;">with MALUSI MBOKAZI</span> <br><span style="color:#f4c400;">LIVE RECORDING</span></h2>
+<p>The 2nd Annual The Revival with Malusi Mbokazi" is a transformative gospel event designed to ignite spiritual renewal and unite people from 
+    all walks of life under the powerful motto, “BE REVIVED.” This high energy gathering seeks to create a hullaballoo of worship, combining 
+    soul stirring music...</p>
+    <div class="hero-buttons">
+<button class="btn btn-red">Read More</button>
+<!-- <button class="btn btn-outline">PERSONAL LIFE</button> -->
+</div>
+</div>
+
+<div class="buy">
+<button>BUY TICKETS</button>
+</div>
+
+</div>
+</section>
+
+<!-- BOOKINGS -->
+
+<section class="bookings">
+
+<div class="booking-left">
+
+<h3>FOR BOOKINGS</h3>
+<p>Please contact us:</p>
+
+<h1>+27 73 157 9508</h1>
+
+<p>Calls • SMS • WhatsApp</p>
+
+<p><b>mbokazi.malusi@gmail.com</b></p>
+
+</div>
+
+<div class="booking-right">
+<div class="play">
+ <a href="https://youtu.be/RbBA693Abps?si=ejUrPfUBC0MG5t86" target="_blank" class="youtube-btn">
+<i class="fa fa-play" style="color: white;"></i>
+</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+<div class="container contact-grid">
+
+<div>
+
+<h1>MALUSI MBOKAZI</h1>
+
+<!-- <p>Follow on social media</p> -->
+
+<div class="social">
+<!-- <i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-youtube"></i>
+<i class="fab fa-tiktok"></i> -->
+<img src="img/facebook.png" style="width: 11%;">
+<img src="img/twitter.png" style="width: 11%;">
+<img src="img/instagram.png" style="width: 11%;">
+<img src="img/tiktok.png" style="width: 11%;">
+<img src="img/youtube.png" style="width: 11%;">
+</div>
+
+</div>
+
+<div>
+<!-- <label>Name</label>
+<input type="text">
+<label>Contact Number</label>
+<input type="text">
+<label>Email Address</label>
+<input type="email">
+<label>Message</label>
+<textarea rows="4"></textarea>
+
+<button class="send">Send Message</button> -->
+<div class="contact-input-row">
+
+<input type="text" placeholder="Name">
+
+<input type="text" placeholder="Contact Number">
+
+<input type="email" placeholder="Email Address">
+
+</div>
+
+<textarea rows="4" placeholder="Message"></textarea>
+
+<button class="send">Send Message</button>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Malusi Mbokazi | EzakwaDonda Projects (Pty) Ltd | All Rights Reserved
+</footer>
+
+</body>
+</html>
