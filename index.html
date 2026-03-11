@@ -24,7 +24,8 @@ box-sizing:border-box;
 }
 
 body{
-font-family:'Poppins',sans-serif;
+font-family: 'Montserrat';
+font-size: 18px;
 background:#000;
 color:white;
 }
@@ -51,7 +52,7 @@ align-items:center;
 
 .logo{
 font-weight:600;
-font-size:18px;
+font-size:24px;
 }
 
 nav ul{
@@ -63,7 +64,7 @@ gap:28px;
 nav a{
 text-decoration:none;
 color:white;
-font-size:13px;
+font-size:18px;
 }
 
 .book-btn{
@@ -90,8 +91,8 @@ padding:40px 0 40px 0;
 .artist-img{
 position:absolute;
 right:8%;
-bottom:-120px;   /* pushes image into next section */
-/* height:750px; */
+bottom:0;   /* pushes image into next section */
+height:750px;
 z-index:5;
 }
 
@@ -108,7 +109,7 @@ margin-bottom:15px;
 }
 
 .hero p{
-font-size:13px;
+font-size:18px;
 line-height:1.8;
 color:#ddd;
 }
@@ -121,7 +122,7 @@ margin-top:25px;
 padding:10px 20px;
 border-radius:25px;
 border:none;
-font-size:12px;
+font-size:18px;
 cursor:pointer;
 margin-right:10px;
 }
@@ -175,7 +176,7 @@ align-items:center;
 }
 
 .journey p{
-font-size:13px;
+font-size:18px;
 line-height:1.8;
 color: black;
 width: 150%;
@@ -188,7 +189,7 @@ border:none;
 padding:10px 20px;
 border-radius:20px;
 color:white;
-font-size:12px;
+font-size:18px;
 }
 
 /* EVENT */
@@ -243,6 +244,7 @@ grid-template-columns:1fr 2fr;
 background:#f4c400;
 color:black;
 padding:60px;
+width: 100%;
 }
 
 .booking-left h3{
@@ -347,10 +349,107 @@ footer{
 background:#111;
 text-align:center;
 padding:15px;
-font-size:12px;
+font-size:18px;
 color:#aaa;
 }
 
+
+.tabs{
+display:flex;
+/* background:#e9edf5; */
+border-radius:5px;
+padding:6px;
+gap:5px;
+width: 35%;
+margin-left: 5%;
+}
+
+.tab{
+flex:1;
+text-align:center;
+padding:12px;
+border-radius:10px;
+cursor:pointer;
+color: #e33c2e;
+border: solid 2px white;
+font-weight: bold;
+}
+
+.tab.active{
+background:white;
+font-weight:bold;
+color: black;
+/* box-shadow:0 1px 3px rgba(0,0,0,0.1); */
+border: solid 2px #e33c2e;
+}
+
+.section{
+margin-top:20px;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.badge{
+background:#e8f7ef;
+color:#1a9d62;
+padding:4px 10px;
+border-radius:15px;
+font-size:12px;
+}
+
+
+/* Button */
+.open-btn{
+    padding:12px 25px;
+    background:#007BFF;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+/* Popup overlay */
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999; /* keeps popup above everything */
+}
+
+/* Show popup */
+.popup:target{
+    display:flex;
+}
+
+/* Popup box */
+.popup-content{
+    background:white;
+    padding:30px;
+    width:90%;
+    border-radius:8px;
+    text-align:left;
+    position:relative;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Close button */
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:22px;
+    text-decoration:none;
+    color:black;
+}
 /* RESPONSIVE */
 
 @media (max-width:992px){
@@ -380,11 +479,11 @@ height:300px;
 }
 
 .artist-img{
-position:relative;
+/* position:relative; */
 bottom:0;
 right:0;
 height:auto;
-width:80%;
+width:60%;
 display:block;
 margin:40px auto;
 }
@@ -405,7 +504,7 @@ padding-bottom:60px;
     
 <div class="container nav">
 
-<div class="logo">MALUSI MBOKAZI</div>
+<div class="logo"><img src="img/logo1.jpeg" width="50%"></div>
 
 <nav>
 <ul>
@@ -419,6 +518,7 @@ padding-bottom:60px;
 
 </div>
 </header>
+<hr style="border-color: #e33c2e;">
 
 <!-- HERO -->
 
@@ -457,7 +557,7 @@ Best Accapella Group at the SABC Crown Gospel Music Awards.
 <div class="container hero-grid">
 
 <div class="hero-text">
-
+<p style="color: #e33c2e;">GET TO KNOW</p>
 <h3>MALUSI MBOKAZI</h3>
 
 <p>
@@ -471,29 +571,61 @@ as television appearances on shows such as Adam on Tswane TV.
 </p>
 
 <div class="hero-buttons">
-<button class="btn btn-red">Read More</button>
+<!-- <button class="btn btn-red">Read More</button> -->
+<!-- <a class="btn btn-red" href="#popup1" style="color: black; background-color: white; border: solid 2px #e33c2e;">Read More</a> -->
+<a href="#popup1" class="open-btn" style="color: black; background-color: white; border: solid 2px #e33c2e; border-radius: 25px;">Read More</a>
 <!-- <button class="btn btn-outline">PERSONAL LIFE</button> -->
 </div>
 
+<!-- Popup -->
+<div id="popup1" class="popup">
+    <div class="popup-content">
+        <a href="#" class="close">&times;</a>
+        <h3 style="color: #e33c2e;">ABOUT MALUSI MBOKAZI</h3>
+        <p style="color: black;">
+            Malusi Mbokazi is a South African gospel artist, performer, and mentor with a long and impactful career in the gospel music industry. 
+            Known for his powerful voice and inspiring ministry, he has performed on many prestigious stages and collaborated with leading 
+            gospel artists across Africa. Throughout his career, Malusi has appeared on major media platforms including interviews on 
+            Ukhozi FM, Vuma FM, and Igagasi FM, as well as television appearances on shows such as Adam on Tswane TV. His music has 
+            been played on various radio stations across the continent.<br><br>
+
+            Malusi has performed at major gospel events including the All White Gospel Show at Carnival City, Moshito Gospel Festival, and several 
+            Easter festivals such as Kufezwe and Uvukile. He has also shared stages with well-known African gospel artists and participated in 
+            initiatives promoting unity across Africa.<br><br>
+
+            Beyond performing, Malusi has contributed to developing new talent. From 2016 to 2020 he served as a judge and coach for the eThekwini 
+            Municipality Gospel Music Discovery Competition, helping discover and mentor emerging gospel singers. His music journey includes 
+            recording projects such as The Revelation live CD and DVD and The Revival live recording featuring several 
+            gospel artists. In addition, he published a personal book titled “A Great Pastor in Church but a Beast to His Family.”<br>
+        </p>
+    </div>
 </div>
 
 </div>
 
-<img src="img/mbokazi.png" class="artist-img" style="top: 30px;">
+</div>
+
+
 
 </section>
 
 <!-- JOURNEY -->
 
 <section class="journey" style="background-color: #f4c400;">
+
+<div class="tabs">
+<div class="tab active" onclick="showTab('medications',this)">PERSONAL JOURNEY</div>
+<div class="tab" onclick="showTab('history',this)">PERSONAL LIFE</div>
+</div>
+
 <div class="container journey-grid">
 
 <!-- <img src="mbokazi.png"> -->
 
-<div>
 
-<h3>PERSONAL JOURNEY</h3>
 
+<div id="medications">
+<br>
 <p>
 Malusi’s life has also been marked by powerful testimonies of perseverance. In 2014, doctors warned that he might never sing again after 
 discovering a serious voice condition. However, through faith and medical help, he recovered and continued his music ministry.<br><br>
@@ -502,16 +634,40 @@ In September 2022, shortly after hosting a live recording, he faced another seri
 cholecystitis. After several weeks in hospital, he recovered and continues his musical mission.
 </p>
 <div class="hero-buttons">
-<!-- <button class="btn btn-red">DOWNLOAD PROFILE</button> -->
-<a  class="btn btn-red" href="doc/doc.pdf" target="_blank">DOWNLOAD PROFILE</a>
-<!-- <button class="btn btn-outline">PERSONAL LIFE</button> -->
+<a class="btn btn-red" href="doc/doc.pdf" target="_blank" style="color: black; background-color: white; border: solid 2px #e33c2e;">DOWNLOAD PROFILE</a>
+</div>
 </div>
 
-<!-- <button class="download">DOWNLOAD PROFILE</button> -->
 
+
+<div id="history" style="display:none">
+<br>
+<p>
+Malusi Mbokazi enjoys his marriage with his wife Phillile Khoza-Mbokazi and their children. Together they work on different projects through their 
+company EzakwaDonda Projects, supporting community and music.
+</p>
+<div class="hero-buttons">
+<a class="btn btn-red" href="doc/doc.pdf" target="_blank" style="color: black; background-color: white; border: solid 2px #e33c2e;">DOWNLOAD PROFILE</a>
+<!-- <a href="doc/doc.pdf" class="btn btn-red" style="color: black; background-color: white; border: solid 2px #e33c2e; border-radius: 25px;">DOWNLOAD PROFILE</a> -->
+</div>
 </div>
 
+<!-- <div>
+<h3>PERSONAL JOURNEY</h3><br>
+<p>
+Malusi’s life has also been marked by powerful testimonies of perseverance. In 2014, doctors warned that he might never sing again after 
+discovering a serious voice condition. However, through faith and medical help, he recovered and continued his music ministry.<br><br>
+
+In September 2022, shortly after hosting a live recording, he faced another serious health challenge and was hospitalized for acute 
+cholecystitis. After several weeks in hospital, he recovered and continues his musical mission.
+</p>
+<div class="hero-buttons">
+<a class="btn btn-red" href="doc/doc.pdf" target="_blank" style="color: black; background-color: white; border: solid 2px #e33c2e;">DOWNLOAD PROFILE</a>
 </div>
+</div> -->
+
+</div>
+<img src="img/mbokazi.png" class="artist-img">
 </section>
 
 <!-- EVENT -->
@@ -521,25 +677,83 @@ cholecystitis. After several weeks in hospital, he recovered and continues his m
 
 <div class="date" style="width: 1px; background-color: white;"></div>
 
-<img src="img/revival.png">
+<img src="img/revival.png" style="width: 110%;">
 
 <div>
-<p>THE REVIVAL WITH</p>
-<h2><span style="color:#e33c2e;">with MALUSI MBOKAZI</span> <br><span style="color:#f4c400;">LIVE RECORDING</span></h2>
+<p>THE REVIVAL with</p>
+<h2><span style="color:#e33c2e;">MALUSI MBOKAZI</span> <br><span style="color:#f4c400;">LIVE RECORDING</span></h2>
 <p>The 2nd Annual The Revival with Malusi Mbokazi" is a transformative gospel event designed to ignite spiritual renewal and unite people from 
     all walks of life under the powerful motto, “BE REVIVED.” This high energy gathering seeks to create a hullaballoo of worship, combining 
     soul stirring music...</p>
     <div class="hero-buttons">
-<button class="btn btn-red">Read More</button>
-<!-- <button class="btn btn-outline">PERSONAL LIFE</button> -->
+<!-- <button class="btn btn-red" style="color: black; background-color: white; border: solid 2px #e33c2e;">Read More</button> -->
+<a href="#popup2" class="open-btn" style="color: black; background-color: white; border: solid 2px #e33c2e; border-radius: 25px;">Read More</a>
+<table style="width: 100%; margin-top:2%;">   
+    <tr>
+        <td style="color: black;">
+            <table>   
+                <tr>
+                    <td style="color: black; width: 25%;"><img src="img/location.png"  style="width: 70%;"></td>
+                    <td style="color: black; width: 70%;">Venue:<br><strong style="font-size:25px; float: left;">Durban ICC</strong></td>
+                </tr>
+            </table>
+        </td>
+        <td style="color: black;">
+            <table>   
+                <tr>
+                    <td style="color: black; width: 25%;"><img src="img/calendar.png"  style="width: 70%;"></td>
+                    <td style="color: black;">Date:<br><strong style="font-size:25px;">05 Sept. 2026</strong></td>
+                </tr>
+            </table>
+        </td>
+        <td style="color: black;">
+            <table>   
+                <tr>
+                    <td style="color: black; width: 25%;"><img src="img/clock.png"  style="width: 70%;"></td>
+                    <td style="color: black;">Gates open at 16h00:<br><strong style="font-size:25px;">Show Time 16h00</strong></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- Popup -->
+<div id="popup2" class="popup">
+    <div class="popup-content">
+        <a href="#" class="close">&times;</a>
+        <h3 style="color: #e33c2e;">THE REVIVAL WITH MALUSI MBOKAZI LIVE RECORDING</h3><br>
+        <p style="color: black;">
+            The 2nd Annual The Revival with Malusi Mbokazi" is a transformative gospel event designed to ignite spiritual renewal and unite people 
+            from all walks of life under the powerful motto, “BE REVIVED.” This high energy gathering seeks to create a hullaballoo of worship, 
+            combining soul stirring music, dynamic performances, and the Word to inspire deep reflection and revival. The event will proudly 
+            showcase exceptional homegrown artists while also inviting renowned gospel superstars to share the stage, fostering unforgettable 
+            collaborations and mind provoking performances.<br><br>
+            
+            More than just a concert, this experience is a movement a divine call to rejoice, reconnect, and be spiritually awakened. Through 
+            electrifying praise, heartfelt testimonies, and communal worship, "The Revival" aims to leave attendees uplifted, empowered, and 
+            transformed. With world class production, an inclusive atmosphere, and a mission to spread hope, this annual gathering is set to 
+            be a landmark occasion in the gospel community, drawing multitudes to celebrate faith, talent, and the power of revival.<br>
+        </p>
+    </div>
+</div>
+
+
+
 </div>
 </div>
 
 <div class="buy">
-<button>BUY TICKETS</button>
+<a  class="btn btn-red" href="https://www.ticketpro.co.za/" target="_blank">BUY TICKETS</a>
 </div>
 
 </div>
+
+<div class="container event-grid">
+
+<div class="date" style="width: 1px; background-color: white;"></div>
+
+</div>
+
 </section>
 
 <!-- BOOKINGS -->
@@ -548,18 +762,20 @@ cholecystitis. After several weeks in hospital, he recovered and continues his m
 
 <div class="booking-left">
 
-<h3>FOR BOOKINGS</h3>
-<p>Please contact us:</p>
+<h1 style="color: #e33c2e;">FOR BOOKINGS</h1>
+<p>Please contact us on the details below:</p>
 
 <h1>+27 73 157 9508</h1>
 
 <p>Calls • SMS • WhatsApp</p>
-
+<br>
+<hr style="border-color: #e33c2e;">
+<br>
 <p><b>mbokazi.malusi@gmail.com</b></p>
 
 </div>
 
-<div class="booking-right">
+<div class="booking-right" style="background-image: url('img/pic.jpg'); background-size:cover;">
 <div class="play">
  <a href="https://youtu.be/RbBA693Abps?si=ejUrPfUBC0MG5t86" target="_blank" class="youtube-btn">
 <i class="fa fa-play" style="color: white;"></i>
@@ -577,35 +793,23 @@ cholecystitis. After several weeks in hospital, he recovered and continues his m
 
 <div>
 
-<h1>MALUSI MBOKAZI</h1>
+<img src="img/logo.png" width="60%">
 
 <!-- <p>Follow on social media</p> -->
 
 <div class="social">
-<!-- <i class="fab fa-facebook"></i>
-<i class="fab fa-instagram"></i>
-<i class="fab fa-youtube"></i>
-<i class="fab fa-tiktok"></i> -->
-<img src="img/facebook.png" style="width: 11%;">
-<img src="img/twitter.png" style="width: 11%;">
-<img src="img/instagram.png" style="width: 11%;">
-<img src="img/tiktok.png" style="width: 11%;">
-<img src="img/youtube.png" style="width: 11%;">
+<a href="https://www.facebook.com/share/1H8AmKF4jx/?mibextid=wwXIfr" target="_blank"><img src="img/facebook.png" style="width: 11%;"></a>
+<a  target="_blank"><img src="img/twitter.png" style="width: 11%;"></a>
+<a href="https://www.instagram.com/malusimbokazi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+    <img src="img/instagram.png" style="width: 11%;"></a>
+<a href="https://www.tiktok.com/@malusimbokazi?_r=1&_t=ZS-94YKptXKVDU" target="_blank"><img src="img/tiktok.png" style="width: 11%;"></a>
+<a href="https://www.youtube.com/@malusimbokazi" target="_blank"><img src="img/youtube.png" style="width: 11%;"></a>
 </div>
 
 </div>
 
 <div>
-<!-- <label>Name</label>
-<input type="text">
-<label>Contact Number</label>
-<input type="text">
-<label>Email Address</label>
-<input type="email">
-<label>Message</label>
-<textarea rows="4"></textarea>
 
-<button class="send">Send Message</button> -->
 <div class="contact-input-row">
 
 <input type="text" placeholder="Name">
@@ -626,8 +830,26 @@ cholecystitis. After several weeks in hospital, he recovered and continues his m
 </section>
 
 <footer>
-© 2026 Malusi Mbokazi | EzakwaDonda Projects (Pty) Ltd | All Rights Reserved
+<p style="width: 90%; margin-left: 5%;"><span style="float: left;">© 2026 Malusi Mbokazi | EzakwaDonda Projects (Pty) Ltd | All Rights Reserved</span>
+    <span style="float: right;">Powerd by: Concept24</span><p><br>
 </footer>
+<script>
 
+function showTab(tab,element){
+
+document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"))
+element.classList.add("active")
+
+let sections=["medications","history"]
+
+sections.forEach(s=>{
+document.getElementById(s).style.display="none"
+})
+
+document.getElementById(tab).style.display="block"
+
+}
+
+</script>
 </body>
 </html>
