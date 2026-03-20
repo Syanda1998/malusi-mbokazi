@@ -483,6 +483,32 @@ font-size:12px;
 /* RESPONSIVE */
 
 @media (max-width:992px){
+ .popup{
+    align-items:flex-start;   /* move popup to top */
+    padding:20px;
+    overflow-y:auto; /* allows fallback scrolling */
+  }
+
+.popup-content{
+    background:white;
+    width:100%;
+    max-width:600px;
+    max-height:90vh;     /* limits height */
+    overflow-y:auto;     /* enables vertical scroll */
+    -webkit-overflow-scrolling: touch; /* smooth iPhone scroll */
+    padding:25px;
+    border-radius:10px;
+    position:relative;
+}
+
+  .popup-content h3{
+    font-size:20px;
+  }
+
+  .popup-content p{
+    font-size:16px;
+    line-height:1.6;
+  }
 
 .hero-grid,
 .journey-grid,
@@ -1165,6 +1191,15 @@ document.getElementById(tab).style.display="block"
 document.querySelector('.menu-toggle').onclick = function(){
   document.querySelector('nav').classList.toggle('active');
 }
+</script>
+<script>
+window.addEventListener("hashchange", function(){
+  if(location.hash){
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+});
 </script>
 </body>
 </html>
