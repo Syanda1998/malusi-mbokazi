@@ -678,6 +678,10 @@ padding-bottom:60px;
     width: 100%;
   }
 
+    nav{
+    display: none;
+  }
+
 }
 
 .btn-red{
@@ -688,6 +692,33 @@ padding-bottom:60px;
   display: inline-block;
 }
 
+.menu-toggle{
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px){
+
+  nav{
+    display: none;
+  }
+
+  .menu-toggle{
+    display: block;
+  }
+
+  nav.active{
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: black;
+  padding: 20px;
+}
+
+}
+
 
 </style>
 
@@ -696,7 +727,11 @@ padding-bottom:60px;
 <body>
 
 <header>
-    
+
+    <div class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
 <div class="container nav">
 
 <div class="logo"><img src="img/logo1.jpeg" width="50%"></div>
@@ -1059,6 +1094,11 @@ document.getElementById(tab).style.display="block"
 
 }
 
+</script>
+<script>
+document.querySelector('.menu-toggle').onclick = function(){
+  document.querySelector('nav').classList.toggle('active');
+}
 </script>
 </body>
 </html>
