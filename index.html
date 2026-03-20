@@ -31,9 +31,10 @@ color:white;
 }
 
 .container{
-max-width:90%;
-margin:auto;
-padding:0 20px;
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:0 15px;
 }
 
 /* HEADER */
@@ -142,10 +143,15 @@ color:#e33c2e;
 width:100%;
 max-width:430px;
 }
-.contact-input-row{
+/* .contact-input-row{
 display:flex;
 gap:15px;
 margin-bottom:15px;
+} */
+
+.contact-input-row{
+    display:flex;
+    gap:15px;
 }
 
 .contact-input-row input{
@@ -180,7 +186,7 @@ align-items:center;
 font-size:18px;
 line-height:1.8;
 color: black;
-width: 150%;
+width: 100%;
 }
 
 .download{
@@ -244,7 +250,7 @@ grid-template-columns:1fr 2fr;
 .booking-left{
 background:#f4c400;
 color:black;
-padding:110px;
+padding:40px 20px;
 width: 100%;
 text-align: center;
 }
@@ -717,8 +723,59 @@ padding-bottom:60px;
   padding: 20px;
 }
 
+html, body{
+    overflow-x: hidden;
 }
 
+.contact-input-row{
+    flex-direction:column;
+}
+
+.booking-right1 table,
+  .booking-right1 tr,
+  .booking-right1 td{
+      display:block;
+      width:100%;
+  }
+
+  .buy{
+      margin-top:20px !important;
+      text-align:center;
+  }
+  /* .artist-img{
+    position:relative !important;
+    width:90%;
+    max-width:300px;
+    margin:30px auto;
+    display:block;
+  } */
+  nav{
+    width:100%;
+    right:0;
+  }
+
+  nav ul{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+  }
+
+
+}
+
+html, body{
+    overflow-x: hidden;
+}
+
+.btn-red{
+    display:inline-block;
+    text-align:center;
+    max-width:100%;
+}
+.btn{
+    font-size:16px;
+    padding:10px 16px;
+}
 
 </style>
 
