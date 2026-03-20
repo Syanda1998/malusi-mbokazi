@@ -115,6 +115,7 @@ margin-bottom:15px;
 font-size:18px;
 line-height:1.8;
 color:#ddd;
+width: 130%;
 }
 
 .hero-buttons{
@@ -188,7 +189,7 @@ align-items:center;
 font-size:18px;
 line-height:1.8;
 color: black;
-width: 100%;
+width: 170%;
 }
 
 .download{
@@ -390,7 +391,7 @@ border-radius:5px;
 padding:6px;
 gap:5px;
 width: 35%;
-margin-left: 8%;
+margin-left: -2%;
 margin-top: -20px;
 }
 
@@ -483,7 +484,7 @@ font-size:12px;
 }
 /* RESPONSIVE */
 
-@media (max-width:992px){
+@media (max-width:1200px){
  .popup{
     align-items:flex-start;   /* move popup to top */
     padding:20px;
@@ -599,19 +600,19 @@ padding-bottom:60px;
     flex-direction: column;
   }
 /* TEXT CONTROL */
-.hero-text{
-    max-width: 600px;
-}
+/* .hero-text{
+    max-width: 800px;
+} */
 
 /* JOURNEY TEXT FIX */
-.journey p{
+.journey p, .hero p{
     width: 100%;
     max-width: 600px;
 }
 
 }
 
-@media (max-width: 992px){
+@media (max-width: 1200px){
 
 .hero-grid{
     grid-template-columns:1fr;
@@ -732,7 +733,7 @@ padding-bottom:60px;
   cursor: pointer;
 }
 
-@media (max-width: 768px){
+@media (max-width: 1200px){
 
     *{
 font-family: 'Montserrat', sans-serif;
@@ -852,6 +853,18 @@ html, body{
     gap:8px;
   }
 
+   .hero .container,
+  .journey .container{
+    max-width:100%;
+    padding:0 15px;
+  }
+
+  .hero,
+  .journey{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
 }
 
 html, body{
@@ -875,6 +888,23 @@ textarea{
 
 h1,h2,h3,h4,h5,h6{
     font-family: 'Montserrat', sans-serif;
+}
+
+
+.hero .container,
+.journey .container{
+    max-width:1600px;   /* increase content width */
+    width:100%;
+}
+.hero,
+.journey{
+    padding-left:40px;
+    padding-right:40px;
+}
+.hero-text,
+.journey p,
+.hero p{
+    max-width:1600px;
 }
 </style>
 
@@ -946,7 +976,7 @@ Best Accapella Group at the SABC Crown Gospel Music Awards.
 <p style="color: #e33c2e;">GET TO KNOW</p>
 <h3>MALUSI MBOKAZI</h3>
 
-<p>
+<p style="max-width: 1000px;">
 Malusi Mbokazi is a South African gospel artist, performer, and mentor with a long and impactful career in the gospel music industry. 
 Known for his powerful voice and inspiring ministry, he has performed on many prestigious stages and collaborated with leading gospel 
 artists across Africa.<br><br>
@@ -1030,7 +1060,7 @@ cholecystitis. After several weeks in hospital, he recovered and continues his m
 
 <div id="history" style="display:none">
 <br>
-<p>
+<p style="width: 700px;">
 Malusi Mbokazi enjoys his marriage with his wife Phillile Khoza-Mbokazi and their children. Together they work on different projects through their 
 company EzakwaDonda Projects, supporting community and music.
 </p>
