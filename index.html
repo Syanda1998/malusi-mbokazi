@@ -907,6 +907,9 @@ h1,h2,h3,h4,h5,h6{
 .hero p{
     max-width:1600px;
 }
+html {
+  scroll-behavior: smooth;
+}
 </style>
 
 </head>
@@ -925,11 +928,11 @@ h1,h2,h3,h4,h5,h6{
 
 <nav>
 <ul>
-<li><a href="#">HOME</a></li>
-<li><a href="#">ABOUT</a></li>
-<li><a href="#">EVENTS</a></li>
-<li><a href="#">CONTACT</a></li>
-<li><a class="book-btn">BOOKINGS</a></li>
+<!-- <li><a href="#">HOME</a></li> -->
+<li><a href="#hero">ABOUT</a></li>
+<li><a href="#events">EVENTS</a></li>
+<li><a href="#contact">CONTACT</a></li>
+<li><a class="book-btn" href="#bookings">BOOKINGS</a></li>
 </ul>
 </nav>
 
@@ -969,7 +972,7 @@ Best Accapella Group at the SABC Crown Gospel Music Awards.
 </div>
 </section> -->
 
-<section class="hero">
+<section class="hero" id="hero">
 
 <div class="container hero-grid">
 
@@ -1093,7 +1096,7 @@ cholecystitis. After several weeks in hospital, he recovered and continues his m
 <!-- EVENT -->
 
 <!-- BOOKINGS -->
- <section class="bookings" style="background-color: white;">
+ <section class="bookings" style="background-color: white;" id="events">
 
 <div class="booking-left1" style="background-color: white;"><img src="img/revival.png" style="width: 100%;"></div>
 
@@ -1175,7 +1178,7 @@ cholecystitis. After several weeks in hospital, he recovered and continues his m
 </section>
 <!-- ========================== -->
 
-<section class="bookings">
+<section class="bookings" id="bookings">
 
 <div class="booking-left">
 
@@ -1205,7 +1208,7 @@ cholecystitis. After several weeks in hospital, he recovered and continues his m
 
 <!-- CONTACT -->
 
-<section class="contact">
+<section class="contact" id="contact">
 <div class="container contact-grid" style="padding: 15px;">
 
 <div>
